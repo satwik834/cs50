@@ -1,0 +1,46 @@
+body{
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body::-webkit-scrollbar{
+    display:none;
+}
+
+.text{
+    color:#D6E4E5;
+    text-align:center;
+    margin:auto;
+    font-family: 'Trebuchet', serif;
+    border:0px;
+
+}
+
+#name{
+    margin:auto;
+    padding:7%;
+    font-size:80px;
+    font-family: 'Merienda';
+    border:0px;
+}
+
+.text1{
+    color:#D6E4E5;
+    text-align:center;
+    margin:auto;
+    font-family: 'Trebuchet', serif;
+    border:0px;
+
+}
+
+#name1{
+    margin:auto;
+    padding:7%;
+    font-size:80px;
+    font-family: 'Merienda';
+    border:0px;
+}

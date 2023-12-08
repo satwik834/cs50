@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<<form action="/" method="post">
+    <button class="btn btn-primary" type="submit">Reset</button>
+</form>>
+<main class="container py-5 text-center">
+    <table class= "table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Current Price</th>
+                <th>Purchased Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for share in info %}
+                <tr>
+                    <td>{{share["symbol"]}}</td>
+                    <td>{{share["current_price"] | usd}}</td>
+                    <td>{{share["price"] | usd}}</td>
+                    <td>{{share["quantity"]}}</td>
+                    <td>{{share["total"] | usd}}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class = "fw-bold text-end" colspan = "4">Cash</td>
+                <td class = "w-bold">{{cash | usd}}</td>
+            </tr>
+            <tr>
+                <td class = "fw-bold text-end" colspan = "4">Total</td>
+                <td class = "w-bold">{{total | usd}}</td>
+            </tr>
+
+        </tfoot>
+    </table>
+</main>
+{% endblock %}
