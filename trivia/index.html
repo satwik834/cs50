@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section" id = "MCQ">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What Can Money Buy you?</h3>
+                <button id = "correct" >EVERYTHING</button>
+                <button class = "incorrect1">NOTHING</button>
+                <button class = "incorrect2">SOMETHING</button>
+                <button class = "incorrect3">MOST OF THE THINGS</button>
+                <h3 id = "answer"></h3>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Are you a stupid fucker?</h3>
+                <form onsubmit = "check() ; return false;">
+                    <input id = 'usrinput' type = 'search'>
+                    <input type = 'submit' , value = 'Check Answer'>
+                </form>
+                <h3 id = 'check'></h3>
+            </div>
+            <script>
+                let mcq = document.querySelector('#MCQ')
+                mcq.querySelector('.incorrect1').addEventListener('click',function(){
+                    mcq.querySelector('.incorrect1').style.backgroundColor = 'red'
+                    mcq.querySelector('#answer').innerHTML = "incorrect"
+                })
+                mcq.querySelector('.incorrect2').addEventListener('click',function(){
+                    mcq.querySelector('.incorrect2').style.backgroundColor = 'red'
+                    mcq.querySelector('#answer').innerHTML = "incorrect"
+                })
+                mcq.querySelector('.incorrect3').addEventListener('click',function(){
+                    mcq.querySelector('.incorrect3').style.backgroundColor = 'red'
+                    mcq.querySelector('#answer').innerHTML = "incorrect"
+                })
+                mcq.querySelector('#correct').addEventListener('click',function(){
+                    mcq.querySelector('#correct').style.backgroundColor = 'green'
+                    mcq.querySelector('#answer').innerHTML = "correct"
+                })
+                function check(){
+                    let ansr = document.querySelector('#usrinput').value;
+                    if (ansr.toLowerCase() == 'yes' ){
+                        document.querySelector('#check').innerHTML = 'correct'
+                        document.querySelector('#usrinput').style.backgroundColor = 'green'
+                    }
+                    else{
+                        document.querySelector('#check').innerHTML = 'incorrect'
+                        document.querySelector('#usrinput').style.backgroundColor = 'red'
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>
